@@ -104,11 +104,12 @@ namespace SZÓKITALÁLÓ
 
                                 BETU_LISTA.Remove(BEMENET);
                                 BETUKETTO--;
-                                BETU_VAN.Add(BEMENET);
+                                
                      
 
                         }
                         Console.WriteLine("Talált [ " + BEMENET + " ] betű van benne");
+                        BETU_VAN.Add(BEMENET);
                 }
 
                 
