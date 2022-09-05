@@ -28,6 +28,8 @@ namespace SZÓKITALÁLÓ
             int x = 0;///a vonalak és betűhelyeknél van hasznáva a HELYEK tartományban
             int BETUKETTO = 0;///a több egytipusú betűk számának tároló értéke
             bool ERTEKELO = false;///ennek iagz vagy hamis értéke befolyásolja a win/lose arányt
+            char BEMENET;
+            
             ///DATA vége
 
             ///a helyek tartománya
@@ -66,9 +68,28 @@ namespace SZÓKITALÁLÓ
 
 
                 }
+                bool VOLT_MAR = false;
                 Console.WriteLine(" Adj meg egy betűt és próblákozz,hogy kitatáld a szót");
-                char BEMENET = Convert.ToChar(Console.ReadLine());
-
+                string BEMENET_STRING = Console.ReadLine();
+                BEMENET = Convert.ToChar(BEMENET_STRING);
+                if (BETU_VAN.Count > 0)
+                {
+                    for (int i = 0; i < BETU_VAN.Count; i++)
+                    {
+                        if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_VAN[i])
+                        {
+                            Console.WriteLine("[ " + BEMENET + " ] Betű már volt");
+                            VOLT_MAR = true;
+                            
+                        }
+                        else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_VAN[i])
+                        {
+                            Console.WriteLine("[ " + BEMENET + " ] Betű már volt");
+                            VOLT_MAR = true;
+                            
+                        }
+                    }
+                }
 
 
                 ///Döntő tartomány
@@ -77,13 +98,17 @@ namespace SZÓKITALÁLÓ
                 {
 
                     
-                    if (BEMENET == BETU_LISTA[i])///ha a beneti betű megegyezik valamelyik listában lévő betűvel akkor az ERTEKELO igaz lesz 
+                    if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_LISTA[i])///ha a beneti betű megegyezik valamelyik listában lévő betűvel akkor az ERTEKELO igaz lesz 
                     {
                         ERTEKELO = true;///a win/lose értékelője
                         
 
                             
 
+                    }
+                    else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_LISTA[i])
+                    {
+                        ERTEKELO = true;
                     }
                     
                 }
@@ -96,22 +121,45 @@ namespace SZÓKITALÁLÓ
                         
                         for (int VALT_I = 0; VALT_I < BETU_ARRAY.Length; VALT_I++)///anyiszor ellenőriz amelyi betűből áll a szó
                         {   
-                            if (BEMENET == BETU_ARRAY[VALT_I])///itt adja meg hogy menyi egy tipusú betű van és továbbá itt ad helyet a BETU_HELYE listában ami alapján a vonalak megfelő poziciójában helyezi el
+                            if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_ARRAY[VALT_I])///itt adja meg hogy menyi egy tipusú betű van és továbbá itt ad helyet a BETU_HELYE listában ami alapján a vonalak megfelő poziciójában helyezi el
                             {
                                 BETUKETTO++;
-                                BETU_HELYE[VALT_I + 1] = BEMENET;
+                                BETU_HELYE[VALT_I + 1] = Convert.ToChar(BEMENET_STRING.ToUpper());
+                              
 
                             }
+                            else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_ARRAY[VALT_I])
+                            {
+                                BETUKETTO++;
+                                BETU_HELYE[VALT_I + 1] = Convert.ToChar(BEMENET_STRING.ToLower());
+                                
+                            }
                             
+
 
                         }
                         while (BETUKETTO > 0)///itt anyiszor törli ki a betűt amenyiszer szerepel a BETU_LISTA - ban
                         {   
+                 
+                   
+                            for (int VALT_II = 0; VALT_II < BETU_ARRAY.Length; VALT_II++)///anyiszor ellenőriz amelyi betűből áll a szó
+                            {
+                                if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_ARRAY[VALT_II])///itt adja meg hogy menyi egy tipusú betű van és továbbá itt ad helyet a BETU_HELYE listában ami alapján a vonalak megfelő poziciójában helyezi el
+                                {
+                                    BETU_LISTA.Remove(Convert.ToChar(BEMENET_STRING.ToUpper()));
+                                    BETUKETTO--;
 
-                                BETU_LISTA.Remove(BEMENET);
-                                BETUKETTO--;
-                                
-                     
+                                }
+                                else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_ARRAY[VALT_II])
+                                {
+                                    BETU_LISTA.Remove(Convert.ToChar(BEMENET_STRING.ToLower()));
+                                    BETUKETTO--;
+                                }
+
+
+
+                            }
+
 
                         }
                         Console.WriteLine("Talált [ " + BEMENET + " ] betű van benne");
@@ -121,9 +169,13 @@ namespace SZÓKITALÁLÓ
                 
                 else if (ERTEKELO != true)///ha elvéted és hibázol... egyszer eljő a halál órája :D
                 {
-                    HIBA_LEHET--;
-                    BETU_NINCS.Add(BEMENET);
-                    Console.WriteLine("Nem talált [ " + HIBA_LEHET + " ] próbálkozásod van");
+                    if (VOLT_MAR == false)
+                    {
+                        HIBA_LEHET--;
+                        BETU_NINCS.Add(BEMENET);
+                        Console.WriteLine("Nem talált [ " + HIBA_LEHET + " ] próbálkozásod van");
+                    }
+
                 }
                 ERTEKELO = false;///mivel az ERTEKELO-t az infinity loop elkerülése miatt resetelni kell, ha persze igaz volt.
                 ///Értékelő tartomány vége
