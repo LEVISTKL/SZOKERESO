@@ -49,6 +49,12 @@ namespace SZÓKITALÁLÓ
                 else if (BETU_LISTA.Count == 0)///ha a betűk a listábol mind elfogynak az az nem lesz tobb keresendő betű akkor nyertél
                 {
                     Console.WriteLine("Nyertél!");
+                    Console.Write("A kitalált szó: ");
+                    for (int i = 0; i < BETU_HELYE.Count; i++)
+                    {
+
+                        Console.Write(BETU_HELYE[i+1]);
+                    }
                     break;
                 }
 
