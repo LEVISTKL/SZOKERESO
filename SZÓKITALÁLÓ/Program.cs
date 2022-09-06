@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace SZÓKITALÁLÓ
 {
@@ -9,8 +10,22 @@ namespace SZÓKITALÁLÓ
         {
 
             ///DATA
-            string A_SZO = Console.ReadLine();/// a gondolt szó
-            char[] BETU_ARRAY = A_SZO.ToCharArray();/// itt betűkké változik a szó egy betű array-já
+            string AA = System.IO.Path.GetDirectoryName(typeof(Program).Assembly.Location);
+            var random = new Random();///a random fügvény
+            string[] SZAVAK = System.IO.File.ReadAllLines(AA +"\\SZAVAK.txt");/// a gondolt szavak txt file bekérése és SZAVAK arrayá alakítása
+            List<string> SZAVAKList = new List<string>();///a szavak listálya
+            foreach (String SZO in SZAVAK)///a szavak listába helyezése
+            {
+                SZAVAKList.Add(SZO);
+
+            }
+            int RANDOM = random.Next(SZAVAK.Length);///egy random szám kitalálása ami max anyi lehet ahány sor van a txt file ban
+            string A_SZO = SZAVAKList[RANDOM];///kiválasztunk egy elemet a SZVAKlist listából a random szám használatával
+            /*
+            string[] A_SZO = Console.ReadLine();///a gondolt szó manuális bekérése
+            */
+            char[] BETU_ARRAY = A_SZO.ToCharArray();/// itt betűkké változik a szó, konkrétan egy betű array-já
+
             List<char> BETU_LISTA = new List<char>();/// ez a betűk listája
             foreach (char BETU in BETU_ARRAY)///itt az összes betűt bepakoljuk egy betű listába
             {
