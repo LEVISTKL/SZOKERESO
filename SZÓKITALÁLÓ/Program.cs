@@ -28,8 +28,7 @@ namespace SZÓKITALÁLÓ
             int x = 0;///a vonalak és betűhelyeknél van hasznáva a HELYEK tartományban
             int BETUKETTO = 0;///a több egytipusú betűk számának tároló értéke
             bool ERTEKELO = false;///ennek iagz vagy hamis értéke befolyásolja a win/lose arányt
-            char BEMENET;
-            
+            char BEMENET;///a bemenet char tipusú változó
             ///DATA vége
 
             ///a helyek tartománya
@@ -52,7 +51,7 @@ namespace SZÓKITALÁLÓ
                 {
                     Console.WriteLine("Nyertél!");
                     Console.Write("A kitalált szó: ");
-                    for (int i = 0; i < BETU_HELYE.Count; i++)
+                    for (int i = 0; i < BETU_HELYE.Count; i++)///a szó kiiratása char elemekből akkor hogyha megnyerted a játékot
                     {
 
                         Console.Write(BETU_HELYE[i+1]);
@@ -68,29 +67,51 @@ namespace SZÓKITALÁLÓ
 
 
                 }
+                bool VOLT_MAR_DENINCS = false;
                 bool VOLT_MAR = false;
                 Console.WriteLine(" Adj meg egy betűt és próblákozz,hogy kitatáld a szót");
                 string BEMENET_STRING = Console.ReadLine();
                 BEMENET = Convert.ToChar(BEMENET_STRING);
-                if (BETU_VAN.Count > 0)
+                ///NAGY-kicsi betű ellenörzése hogy már egyszer megadásra került vagy sem. tartomány
+                if (BETU_VAN.Count > 0)///csak akkor ellenörzi ezt a részt, hogya már adtunk meg legalább egy betűt és az helyes volt
                 {
-                    for (int i = 0; i < BETU_VAN.Count; i++)
+                    for (int i = 0; i < BETU_VAN.Count; i++)///anyiszor ellenőriz amenyi betűt már kitaláltunk
                     {
-                        if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_VAN[i])
+                        if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_VAN[i])///ellenőrzi ,hogy nagy betű e a már megadott szó 
                         {
                             Console.WriteLine("[ " + BEMENET + " ] Betű már volt");
-                            VOLT_MAR = true;
-                            
+                            VOLT_MAR = true;///letiltja hogy hibaként kezelje a betűt
+
                         }
-                        else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_VAN[i])
+                        else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_VAN[i])///ellenőrzi ,hogy kis betű e a már megadott szó 
                         {
                             Console.WriteLine("[ " + BEMENET + " ] Betű már volt");
-                            VOLT_MAR = true;
+                            VOLT_MAR = true;///letiltja hogy hibaként kezelje a betűt
                             
                         }
+                      
                     }
                 }
+                else if (BETU_NINCS.Count > 0)///csak akkor ellenörzi ezt a részt, hogya már adtunk meg legalább egy betűt és az helytelen volt
+                {
+                    for (int i = 0; i < BETU_NINCS.Count; i++)///anyiszor ellenőriz amenyi betűt már elrontottunk
+                    {
+                        if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_NINCS[i])///ellenőrzi ,hogy nagy betű e, a már megadott szó 
+                        {
+                            Console.WriteLine("[ " + BEMENET + " ] Betű nincsen és már volt");
+                            VOLT_MAR_DENINCS = true;///letiltja hogy ujra hibaként kezelje a betűt
 
+                        }
+                        else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_NINCS[i])///ellenőrzi ,hogy kis betű e, a már megadott szó 
+                        {
+                            Console.WriteLine("[ " + BEMENET + " ] Betű nincsen és már volt");
+                            VOLT_MAR_DENINCS = true;///letiltja hogy ujra hibaként kezelje a betűt
+
+                        }
+                    }
+
+                }
+                ///NAGY-kicsi betű ellenörzése hogy már egyszer megadásra került vagy sem. tartomány vége
 
                 ///Döntő tartomány
                 ///ez addig ismétlődik még nem talál betut ,ha van.
@@ -98,7 +119,7 @@ namespace SZÓKITALÁLÓ
                 {
 
                     
-                    if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_LISTA[i])///ha a beneti betű megegyezik valamelyik listában lévő betűvel akkor az ERTEKELO igaz lesz 
+                    if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_LISTA[i])///ha a beneti betű megegyezik valamelyik listában lévő betűvel akkor az ERTEKELO igaz lesz,de itt csak a nagybetűket ellenörzi
                     {
                         ERTEKELO = true;///a win/lose értékelője
                         
@@ -106,29 +127,29 @@ namespace SZÓKITALÁLÓ
                             
 
                     }
-                    else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_LISTA[i])
+                    else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_LISTA[i])///ha a beneti betű megegyezik valamelyik listában lévő betűvel akkor az ERTEKELO igaz lesz,de itt csak a kisbetűket ellenörzi
                     {
-                        ERTEKELO = true;
+                        ERTEKELO = true; ;///a win/lose értékelője
                     }
-                    
+
                 }
                 ///Döntő tartomány vége
                 
                 ///Értékelő tartomány
                 if (ERTEKELO == true)///ha talált betűt
-                {
+                {   
                         BETUKETTO = 0;///ha egy betűböl több van akkor ez az érték ami ennek számát mondja meg és jelenleg itt resetelődik, gyakorlatileg nincs értelme de bisztositék anomáliák esetén
                         
                         for (int VALT_I = 0; VALT_I < BETU_ARRAY.Length; VALT_I++)///anyiszor ellenőriz amelyi betűből áll a szó
                         {   
-                            if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_ARRAY[VALT_I])///itt adja meg hogy menyi egy tipusú betű van és továbbá itt ad helyet a BETU_HELYE listában ami alapján a vonalak megfelő poziciójában helyezi el
+                            if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_ARRAY[VALT_I])///itt adja meg hogy menyi egy tipusú betű van és továbbá itt ad helyet a BETU_HELYE listában ami alapján a vonalak megfelő poziciójában helyezi el ,itt jelenleg csak a nagy betűket ellenörzi
                             {
                                 BETUKETTO++;
                                 BETU_HELYE[VALT_I + 1] = Convert.ToChar(BEMENET_STRING.ToUpper());
                               
 
                             }
-                            else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_ARRAY[VALT_I])
+                            else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_ARRAY[VALT_I])///itt adja meg hogy menyi egy tipusú betű van és továbbá itt ad helyet a BETU_HELYE listában ami alapján a vonalak megfelő poziciójában helyezi el ,itt jelenleg csak a kis betűket ellenörzi
                             {
                                 BETUKETTO++;
                                 BETU_HELYE[VALT_I + 1] = Convert.ToChar(BEMENET_STRING.ToLower());
@@ -144,13 +165,13 @@ namespace SZÓKITALÁLÓ
                    
                             for (int VALT_II = 0; VALT_II < BETU_ARRAY.Length; VALT_II++)///anyiszor ellenőriz amelyi betűből áll a szó
                             {
-                                if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_ARRAY[VALT_II])///itt adja meg hogy menyi egy tipusú betű van és továbbá itt ad helyet a BETU_HELYE listában ami alapján a vonalak megfelő poziciójában helyezi el
+                                if (Convert.ToChar(BEMENET_STRING.ToUpper()) == BETU_ARRAY[VALT_II])///itt adja meg hogy menyi egy tipusú betű van és továbbá itt ad helyet a BETU_HELYE listában ami alapján a vonalak megfelő poziciójában helyezi el. CSAK nagybetűk
                                 {
                                     BETU_LISTA.Remove(Convert.ToChar(BEMENET_STRING.ToUpper()));
                                     BETUKETTO--;
 
                                 }
-                                else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_ARRAY[VALT_II])
+                                else if (Convert.ToChar(BEMENET_STRING.ToLower()) == BETU_ARRAY[VALT_II])///itt adja meg hogy menyi egy tipusú betű van és továbbá itt ad helyet a BETU_HELYE listában ami alapján a vonalak megfelő poziciójában helyezi el. CSAK kisbetűk
                                 {
                                     BETU_LISTA.Remove(Convert.ToChar(BEMENET_STRING.ToLower()));
                                     BETUKETTO--;
@@ -169,12 +190,16 @@ namespace SZÓKITALÁLÓ
                 
                 else if (ERTEKELO != true)///ha elvéted és hibázol... egyszer eljő a halál órája :D
                 {
-                    if (VOLT_MAR == false)
+                    if (VOLT_MAR_DENINCS == false)///ha ujra ugyan azt a hibás betűt adjuk meg akkor már nem fog levonni pontot
                     {
-                        HIBA_LEHET--;
-                        BETU_NINCS.Add(BEMENET);
-                        Console.WriteLine("Nem talált [ " + HIBA_LEHET + " ] próbálkozásod van");
+                        if (VOLT_MAR == false)///ha ujra megadunk egy már megadott és helyes betűt ,akkor mivel azt a progra kitörölte a listából ezért hibaként kezelné, de ez a feltétel meggátolja azt.
+                        {
+                            HIBA_LEHET--;
+                            BETU_NINCS.Add(BEMENET);
+                            Console.WriteLine("Nem talált [ " + HIBA_LEHET + " ] próbálkozásod van");
+                        }
                     }
+
 
                 }
                 ERTEKELO = false;///mivel az ERTEKELO-t az infinity loop elkerülése miatt resetelni kell, ha persze igaz volt.
@@ -196,7 +221,7 @@ namespace SZÓKITALÁLÓ
                 Console.WriteLine(" ] Nincs benne");
             }   ///HELP a felhasználónak tartomány vége
             ///MAIN RÉSZ VÉGE
-        }///HIBÁK:   a nagy és a kicsi betűk között is külömbséget tesz
+        }
     }
      
 }
