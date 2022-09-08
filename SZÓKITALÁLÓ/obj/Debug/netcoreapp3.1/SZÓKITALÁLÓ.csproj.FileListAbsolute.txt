@@ -1,17 +1,3 @@
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.csproj.AssemblyReference.cache
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.AssemblyInfoInputs.cache
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.AssemblyInfo.cs
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.csproj.CoreCompileInputs.cache
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.exe
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.deps.json
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.runtimeconfig.json
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.runtimeconfig.dev.json
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.dll
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.pdb
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.dll
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.pdb
-C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.genruntimeconfig.cache
 C:\Users\LEVIS\Desktop\Új mappa (3)\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.exe
 C:\Users\LEVIS\Desktop\Új mappa (3)\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.deps.json
 C:\Users\LEVIS\Desktop\Új mappa (3)\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.runtimeconfig.json
@@ -26,3 +12,17 @@ C:\Users\LEVIS\Desktop\Új mappa (3)\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj
 C:\Users\LEVIS\Desktop\Új mappa (3)\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.dll
 C:\Users\LEVIS\Desktop\Új mappa (3)\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.pdb
 C:\Users\LEVIS\Desktop\Új mappa (3)\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.genruntimeconfig.cache
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.exe
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.deps.json
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.runtimeconfig.json
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.runtimeconfig.dev.json
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.dll
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.pdb
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.csproj.AssemblyReference.cache
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.AssemblyInfoInputs.cache
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.AssemblyInfo.cs
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.csproj.CoreCompileInputs.cache
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.dll
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.pdb
+C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\obj\Debug\netcoreapp3.1\SZÓKITALÁLÓ.genruntimeconfig.cache

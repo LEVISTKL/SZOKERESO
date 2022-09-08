@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SZÓKITALÁLÓ</id>
+    <version>1.0.0</version>
+    <authors>SZÓKITALÁLÓ</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.runtimeconfig.json" target="lib\netcoreapp3.1\SZÓKITALÁLÓ.runtimeconfig.json" />
+    <file src="C:\Users\LEVIS\Desktop\PROJECTS\SZÓ_KITALÁLÓ\SZÓKITALÁLÓ\bin\Debug\netcoreapp3.1\SZÓKITALÁLÓ.dll" target="lib\netcoreapp3.1\SZÓKITALÁLÓ.dll" />
+  </files>
+</package>

@@ -107,7 +107,7 @@ namespace SZÓKITALÁLÓ
                       
                     }
                 }
-                else if (BETU_NINCS.Count > 0)///csak akkor ellenörzi ezt a részt, hogya már adtunk meg legalább egy betűt és az helytelen volt
+                if (BETU_NINCS.Count > 0)///csak akkor ellenörzi ezt a részt, hogya már adtunk meg legalább egy betűt és az helytelen volt
                 {
                     for (int i = 0; i < BETU_NINCS.Count; i++)///anyiszor ellenőriz amenyi betűt már elrontottunk
                     {
