@@ -16,6 +16,7 @@ namespace SZÓKITALÁLÓ
             #region A bekérési tipus kiértékelése
             if (AB.ToUpper() == "M")
             {
+                Console.WriteLine("Adja meg manuálisan a szót");
                 BEMENETI_SZO = Console.ReadLine() + " ";
             }
             else
@@ -24,13 +25,13 @@ namespace SZÓKITALÁLÓ
                 var random = new Random();///a random fügvény
                 string[] SZAVAK = System.IO.File.ReadAllLines(AA + "\\SZAVAK.txt");/// a gondolt szavak txt file bekérése és SZAVAK arrayá alakítása
                 List<string> SZAVAKList = new List<string>();///a szavak listálya
-                foreach (String SZO in SZAVAK)///a szavak listába helyezése
+                foreach (string SZO in SZAVAK)///a szavak listába helyezése
                 {
                     SZAVAKList.Add(SZO);
 
                 }
                 int RANDOM = random.Next(SZAVAK.Length);///egy random szám kitalálása ami max anyi lehet ahány sor van a txt file ban
-                BEMENETI_SZO = SZAVAKList[RANDOM];///kiválasztunk egy elemet a SZVAKlist listából a random szám használatával
+                BEMENETI_SZO = SZAVAKList[RANDOM] + " ";///kiválasztunk egy elemet a SZVAKlist listából a random szám használatával
             }
             #endregion
             #region A dupla betűk és további változó adatai
