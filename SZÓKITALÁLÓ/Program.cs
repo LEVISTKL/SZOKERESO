@@ -138,12 +138,12 @@ namespace SZÓKITALÁLÓ
                     Console.WriteLine(" ] Betűk helyei");
                     foreach (string item in BETU_VAN)
                     {
-                        Console.Write(item);
+                        Console.Write(item + " ");
                     }
                     Console.WriteLine(" ] Betűket már kitaláltad");
                     foreach (string item in BETU_NINCS)
                     {
-                        Console.Write(item);
+                        Console.Write(item + " ");
                     }
                     Console.WriteLine(" ] Betűket már kitaláltad ,de nincsenek a szóban");
                     Console.WriteLine("ADJA MEG A TIPPJÉT");
