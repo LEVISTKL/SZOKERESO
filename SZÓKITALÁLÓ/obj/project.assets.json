@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LEVIS\\Desktop\\PROJECTS\\SZÓ_KITALÁLÓ\\SZÓKITALÁLÓ\\SZÓKITALÁLÓ.csproj",
+      "projectUniqueName": "C:\\Users\\LEVIS\\Desktop\\SZOKERESO-main\\SZÓKITALÁLÓ\\SZÓKITALÁLÓ.csproj",
       "projectName": "SZÓKITALÁLÓ",
-      "projectPath": "C:\\Users\\LEVIS\\Desktop\\PROJECTS\\SZÓ_KITALÁLÓ\\SZÓKITALÁLÓ\\SZÓKITALÁLÓ.csproj",
+      "projectPath": "C:\\Users\\LEVIS\\Desktop\\SZOKERESO-main\\SZÓKITALÁLÓ\\SZÓKITALÁLÓ.csproj",
       "packagesPath": "C:\\Users\\LEVIS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LEVIS\\Desktop\\PROJECTS\\SZÓ_KITALÁLÓ\\SZÓKITALÁLÓ\\obj\\",
+      "outputPath": "C:\\Users\\LEVIS\\Desktop\\SZOKERESO-main\\SZÓKITALÁLÓ\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LEVIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
