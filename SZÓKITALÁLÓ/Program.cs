@@ -8,9 +8,12 @@ namespace SZÓKITALÁLÓ
     {
         static void Main(string[] args)
         {
+            #region A bekérés tipusának bekérése:
             string BEMENETI_SZO;
             Console.WriteLine("Manuális vagy autómatikus bekérést szeretne (M/A)");
             string AB = Console.ReadLine();
+            #endregion
+            #region A bekérési tipus kiértékelése
             if (AB.ToUpper() == "M")
             {
                 BEMENETI_SZO = Console.ReadLine() + " ";
@@ -29,9 +32,9 @@ namespace SZÓKITALÁLÓ
                 int RANDOM = random.Next(SZAVAK.Length);///egy random szám kitalálása ami max anyi lehet ahány sor van a txt file ban
                 BEMENETI_SZO = SZAVAKList[RANDOM];///kiválasztunk egy elemet a SZVAKlist listából a random szám használatával
             }
-
-
-            List<string> DUPLA_BETUK_LISTAJA = new List<string>(8);
+            #endregion
+            #region A dupla betűk és további változó adatai
+            List<string> DUPLA_BETUK_LISTAJA = new List<string>(8);//dupla betűk listája
             DUPLA_BETUK_LISTAJA.Add("cs");
        
             DUPLA_BETUK_LISTAJA.Add("dz");
@@ -47,10 +50,10 @@ namespace SZÓKITALÁLÓ
             DUPLA_BETUK_LISTAJA.Add("ty");
          
             DUPLA_BETUK_LISTAJA.Add("zs");
-        
-            int DUPLA_BETUK_SZAMA = 0;
-            int SINGLE_BETUK_SZAMA = 0;
-            int HIBA_LEHET = 10;
+            
+            int DUPLA_BETUK_SZAMA = 0;//dupla betűk száma a szóban
+            int SINGLE_BETUK_SZAMA = 0;//single betűk száma a szóban
+            int HIBA_LEHET = 10;//hibalehetőségek száma
             bool VAN_DUPLA_BETU;
             bool VOLT_DUPLA_BETU = false;
             bool TALALAT = false;
@@ -58,67 +61,47 @@ namespace SZÓKITALÁLÓ
             bool NINCS_ELLENORZO = false;
             //Console.WriteLine(BEMENETI_SZO);
             //Console.WriteLine(BEMENETI_SZO.Length);
-            string BEMENETI_BETU;
+            string BEMENETI_BETU;//bementi betű
             string VALT_II;
             string VALT_III;
-            //szosz
-            //oszo
-
             string[] BETUK_HELYE = new string[BEMENETI_SZO.Length - 1];
             string[] BETUK_ARRAY = new string[BEMENETI_SZO.Length - 1];
             List<string> BETU_VAN = new List<string>();
             List<string> BETU_NINCS = new List<string>();
-
-
-                for (int i = 0; i < BEMENETI_SZO.Length - 1; i++)
+            #endregion
+            #region A szó elemzése és a dupla és single betűk helyének lekérése
+            for (int i = 0; i < BEMENETI_SZO.Length - 1; i++)//addig elemzi a szót amenyi single elemből áll a szó
                 {
-                    VALT_II = Convert.ToString(BEMENETI_SZO[i]) + Convert.ToString(BEMENETI_SZO[i + 1]);
+                    VALT_II = Convert.ToString(BEMENETI_SZO[i]) + Convert.ToString(BEMENETI_SZO[i + 1]);// a dupla betűk érdekéban duplán ellenőrzi az indexeket így megállapíthatók a pontos poziciók
                     //Console.WriteLine("TEST " + i);
-                    VAN_DUPLA_BETU = false;
-                    for (int x = 0; x < 7; x++)
+                    VAN_DUPLA_BETU = false;// itt resetelődik a dupla betű érzékelő ami a single betűk érzékelését tiltja le
+                    for (int x = 0; x < 7; x++)// a listában lévő dupla betűket elemzi ,hogy vannak e vayg nincsenek a szó megadott dupla index pozicióján
                     {
 
                         
                         //Console.WriteLine(VALT_II);
                         //Console.WriteLine("TEST2 " + x);
-                        if (DUPLA_BETUK_SZAMA >= 1)
-                        {
 
-                            if (VALT_II.ToLower() == DUPLA_BETUK_LISTAJA[x])
+                            if (VALT_II.ToLower() == DUPLA_BETUK_LISTAJA[x])//elemzi hogy van e dupla betű
                             {
-                                BETUK_HELYE[i] = "--";
-                                BETUK_ARRAY[i] = VALT_II;
-                                DUPLA_BETUK_SZAMA++;
-                                VAN_DUPLA_BETU = true;
+                                BETUK_HELYE[i] = "--";//egy dupla betű helyet ad
+                                BETUK_ARRAY[i] = VALT_II;//a dupla betű pontos tipusát is megadja 
+                                DUPLA_BETUK_SZAMA++;//a dupla betűk számát módosítja
+                                VAN_DUPLA_BETU = true;//ha van dupla betű akkor ez engedélyez egy számítást
                                 //Console.WriteLine("TESTDUPLA " + x);
                             }
-                            
 
-                        }
-                        else if (DUPLA_BETUK_SZAMA < 1)
-                        {
-
-                  
-                            if (VALT_II.ToLower() == DUPLA_BETUK_LISTAJA[x])
-                            {
-                                BETUK_HELYE[i] = "--";
-                                BETUK_ARRAY[i] = VALT_II;
-                                DUPLA_BETUK_SZAMA++;
-                                VAN_DUPLA_BETU = true;
-                                //Console.WriteLine("TESTDUPLA2 " + x);
-                            }
-                        }
 
 
                     }
-                    if (VAN_DUPLA_BETU == false)
+                    if (VAN_DUPLA_BETU == false)//ha nincs dupla betű akkor single betű lesz
                     {
-                        if (VOLT_DUPLA_BETU == true)
+                        if (VOLT_DUPLA_BETU == true)//ha volt már dupla betű az előző folyamatban akkor ez true és más számítást eredményez
                         {
-                            VOLT_DUPLA_BETU = false;
+                            VOLT_DUPLA_BETU = false;//ha volt dupla betű az előző folyamatban akkor most nem ad hozzá semmilyen betűt viszont így egy ! null ! értéket eredményez 
                             
                         }
-                        else
+                        else//ha nem volt dupal betű akkor egy single betűt ad hozzá 
                         {
                             SINGLE_BETUK_SZAMA++;
                             BETUK_HELYE[i] = "_";
@@ -127,16 +110,16 @@ namespace SZÓKITALÁLÓ
                         }
                         
                     }
-                    if (VAN_DUPLA_BETU == true)
+                    if (VAN_DUPLA_BETU == true)//itt történik a folyamat dupla betűvel való megbéjegzése ,ha volt dupla betű
                     {
                         VOLT_DUPLA_BETU = true;
                     }
 
                 }   
-
+                #endregion
                 //Console.WriteLine(DUPLA_BETUK_SZAMA);
                 //Console.WriteLine(SINGLE_BETUK_SZAMA);
-                int OSSZES_BETU_SZAMA = DUPLA_BETUK_SZAMA + SINGLE_BETUK_SZAMA;
+                int OSSZES_BETU_SZAMA = DUPLA_BETUK_SZAMA + SINGLE_BETUK_SZAMA;// a betűk számának összege ami a win/lose kiértékelésért felel
                 // Console.WriteLine(OSSZES_BETU_SZAMA);
                 /*
                 foreach (string item in BETUK_ARRAY)
@@ -144,7 +127,7 @@ namespace SZÓKITALÁLÓ
                     Console.Write(item);
                 }
                 */
-
+            #region A MAIN rész ahol maga a játék történik
             while (OSSZES_BETU_SZAMA > 0)
                 {
                     foreach (string item in BETUK_HELYE)
@@ -326,8 +309,9 @@ namespace SZÓKITALÁLÓ
                         Console.WriteLine("VESZTETTÉL");
                     }
                 }
+            #endregion
 
-                
+
 
         }
     }
